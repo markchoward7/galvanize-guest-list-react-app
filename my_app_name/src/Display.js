@@ -1,7 +1,7 @@
 import React from 'react'
 import GuestList from './GuestList'
 
-function Display({listOfGuests, isRSVP}) {
+function Display({listOfGuests, isRSVP, handleChangeRSVP}) {
     let rsvpTrue = listOfGuests.filter(guest => guest.rsvp)
     let numRsvpTrue = listOfGuests.filter(guest => guest.rsvp).length
     let rsvpFalse = listOfGuests.filter(guest => !guest.rsvp)
@@ -9,20 +9,20 @@ function Display({listOfGuests, isRSVP}) {
     if (isRSVP) {
         return (
             <div>
-                <div class="RSVP">
+                <div className="RSVP">
                     <h6># of Guest RSVP'd</h6>
                     {numRsvpTrue}
-                    <GuestList listOfGuests={rsvpTrue} />
+                    <GuestList listOfGuests={rsvpTrue} handleChangeRSVP={handleChangeRSVP}/>
                 </div>
             </div>
         )
     }
     return (
         <div>
-                <div class="noRSVP">
+                <div className="noRSVP">
                 <h6># of Guest not RSVP'd</h6>
                 {numRsvpFalse}
-                <GuestList listOfGuests={rsvpFalse} />
+                <GuestList listOfGuests={rsvpFalse} handleChangeRSVP={handleChangeRSVP}/>
             </div>
         </div>
     );

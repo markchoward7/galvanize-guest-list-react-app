@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import GuestList from './GuestList'
 import Display from './Display'
 import AddGuest from './AddGuest'
 
@@ -25,6 +24,23 @@ class App extends React.Component {
       {firstName: "Jerry", lastName: "Gergitch", rsvp: true},
       ]
     }
+
+    this.handleChangeRSVP = this.handleChangeRSVP.bind(this)
+  }
+
+  handleChangeRSVP(event) {
+    let target = 0
+    for (var i = 0; i < this.state.guests.length; i++) {
+      if (this.state.guests[i].lastName === event.target.name.split(":")[0] && this.state.guests[i].firstName === event.target.name.split(":")[1]) {
+        target = i
+        break
+      }
+    }
+    let newGuestsArray = [...this.state.guests]
+    newGuestsArray[target].rsvp = !newGuestsArray[target].rsvp
+    this.setState( { 
+      guests: newGuestsArray
+    })
   }
 
   render() {
@@ -32,10 +48,10 @@ class App extends React.Component {
       <div className="App">
         <div className="grid-container-2">
           <div className="Box">
-              <Display listOfGuests={this.state.guests} isRSVP={true} />
+              <Display listOfGuests={this.state.guests} isRSVP={true} handleChangeRSVP={this.handleChangeRSVP}/>
           </div>
           <div className="Box">
-              <Display listOfGuests={this.state.guests} isRSVP={false} />
+              <Display listOfGuests={this.state.guests} isRSVP={false} handleChangeRSVP={this.handleChangeRSVP}/>
           </div>
         </div>
         <AddGuest parent={this} />

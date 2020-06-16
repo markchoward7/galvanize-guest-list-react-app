@@ -4,7 +4,7 @@ function Guest(props) {
     return (
         <div className="Guest">
             <li>
-                Guest: {props.lastName}, {props.firstName} <button onClick={props.rsvp ? "": ""}>Change</button>
+                Guest: {props.lastName}, {props.firstName} <button onClick={props.handleChangeRSVP} name={props.lastName + ":" + props.firstName}>Change</button>
             </li>
         </div>
     );

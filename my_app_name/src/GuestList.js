@@ -2,11 +2,11 @@ import React from 'react'
 
 import Guest from "./Guest"
 
-function GuestList({listOfGuests}) {
+function GuestList({listOfGuests, handleChangeRSVP}) {
     return (
         <ul>
             {listOfGuests.sort(compareFullName).map(guest => {
-                return <Guest lastName={guest.lastName} firstName={guest.firstName} rsvp={guest.rsvp} />})}
+                return <Guest lastName={guest.lastName} firstName={guest.firstName} rsvp={guest.rsvp} handleChangeRSVP={handleChangeRSVP} />})}
             
         </ul>
     )
