@@ -1,4 +1,4 @@
-Todo list react app. Can be used without Docker like normal.
+Guest rsvp list react app. Can be used without Docker like normal.
 
 Use `docker-compose build` to build the image.
 
