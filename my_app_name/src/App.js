@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import GuestList from './GuestList'
+import Display from './Display'
 
 var guests = [
   {firstName: "Rachel", lastName: "Green", rsvp: true},
@@ -24,6 +25,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div class="Display">
+            <Display listOfGuests2={guests} />
+        </div>
         <GuestList listOfGuests={guests} />
       </header>
     </div>
