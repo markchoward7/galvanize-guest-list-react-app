@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import './App.css';
 
 import GuestList from './GuestList'
@@ -25,9 +26,30 @@ function App() {
     <div className="App">
       <header className="App-header">
         <GuestList listOfGuests={guests} />
+        <h2>Add Guest</h2>
+        <form>
+          <input type="text" name="firstName" id="firstName" />First Name
+          <br /><input type="text" name="lastName" id="lastName" />Last Name
+          <br /><input type="checkbox" name="rsvp" id="rsvp" />RSVP
+          <br /><button onClick={AddGuest}>Submit</button>
+        </form>
       </header>
     </div>
   );
+}
+
+function AddGuest(event) {
+  event.preventDefault()
+  let newGuest = {}
+  newGuest.firstName = document.getElementById("firstName").value
+  newGuest.lastName = document.getElementById("lastName").value
+  if (document.getElementById("rsvp").value === "on") {
+    newGuest.rsvp = true
+  } else {
+    newGuest.rsvp = false
+  }
+  guests.push(newGuest)
+  ReactDOM.render(App(), document.getElementById("root"))
 }
 
 export default App;
