@@ -6,7 +6,7 @@
 
 .grid-container-2 {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   gap: 1em;
   padding: 3em;
 }

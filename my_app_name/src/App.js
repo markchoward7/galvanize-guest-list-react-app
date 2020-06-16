@@ -30,20 +30,24 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="grid-container-3">
-          <div className="Display">
-              <Display listOfGuests2={this.state.guests} />
+        <div className="grid-container-2">
+          <div className="Box">
+              <Display listOfGuests={this.state.guests} isRSVP={true} />
+          </div>
+          <div className="Box">
+              <Display listOfGuests={this.state.guests} isRSVP={false} />
           </div>
           <div className="Box">
             <h2>RSVP'd Guests</h2>
-            <GuestList listOfGuests={this.state.guests} />
+            <GuestList listOfGuests={this.state.guests} isRSVP={true} />
           </div>
           <div className="Box">
             <h2>Awaiting RSVP</h2>
-            <GuestList listOfGuests={this.state.guests} />
+            <GuestList listOfGuests={this.state.guests} isRSVP={false}/>
           </div>
-          <AddGuest parent={this} />
         </div>
+        <AddGuest parent={this} />
+        <br />
       </div>
     );
   }
