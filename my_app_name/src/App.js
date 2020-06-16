@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './App.css';
 
 import GuestList from './GuestList'
+import Display from './Display'
 
 var guests = [
   {firstName: "Rachel", lastName: "Green", rsvp: true},
@@ -25,6 +26,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div class="Display">
+            <Display listOfGuests2={guests} />
+        </div>
         <div className="Box">
           <h2>RSVP'd Guests</h2>
           <GuestList listOfGuests={guests} />
