@@ -25,12 +25,16 @@ var guests = [
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="grid-container-3">
         <div class="Display">
             <Display listOfGuests2={guests} />
         </div>
         <div className="Box">
           <h2>RSVP'd Guests</h2>
+          <GuestList listOfGuests={guests} />
+        </div>
+        <div className="Box">
+          <h2>Awaiting RSVP</h2>
           <GuestList listOfGuests={guests} />
         </div>
         <form className="Box">
@@ -40,7 +44,7 @@ function App() {
           <br /><input type="checkbox" name="rsvp" id="rsvp" />RSVP
           <br /><button onClick={AddGuest}>Submit</button>
         </form>
-      </header>
+      </div>
     </div>
   );
 }
