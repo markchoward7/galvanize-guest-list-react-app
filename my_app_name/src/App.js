@@ -25,9 +25,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <GuestList listOfGuests={guests} />
-        <h2>Add Guest</h2>
-        <form>
+        <div className="Box">
+          <h2>RSVP'd Guests</h2>
+          <GuestList listOfGuests={guests} />
+        </div>
+        <form className="Box">
+          <h2>Add Guest</h2>
           <input type="text" name="firstName" id="firstName" />First Name
           <br /><input type="text" name="lastName" id="lastName" />Last Name
           <br /><input type="checkbox" name="rsvp" id="rsvp" />RSVP
