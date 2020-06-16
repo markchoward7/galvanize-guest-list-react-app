@@ -29,7 +29,6 @@ function App() {
         <div class="Display">
             <Display listOfGuests2={guests} />
         </div>
-        <GuestList listOfGuests={guests} />
         <h2>Add Guest</h2>
         <form>
           <input type="text" name="firstName" id="firstName" />First Name
