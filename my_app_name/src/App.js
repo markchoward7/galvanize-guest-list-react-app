@@ -37,14 +37,6 @@ class App extends React.Component {
           <div className="Box">
               <Display listOfGuests={this.state.guests} isRSVP={false} />
           </div>
-          <div className="Box">
-            <h2>RSVP'd Guests</h2>
-            <GuestList listOfGuests={this.state.guests} isRSVP={true} />
-          </div>
-          <div className="Box">
-            <h2>Awaiting RSVP</h2>
-            <GuestList listOfGuests={this.state.guests} isRSVP={false}/>
-          </div>
         </div>
         <AddGuest parent={this} />
         <br />

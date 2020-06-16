@@ -2,23 +2,14 @@ import React from 'react'
 
 import Guest from "./Guest"
 
-function GuestList({listOfGuests, isRSVP}) {
-    if (isRSVP) {
-        return (
-            <ul>
-                {listOfGuests.sort(compareFullName).map(guest => {
-                    return guest.rsvp ? <Guest lastName={guest.lastName} firstName={guest.firstName} rsvp={true} /> : ""})}
-            </ul>
-        )
-    } else {
-        return (
-            <ul>
-                {listOfGuests.sort(compareFullName).map(guest => {
-                    return guest.rsvp ? "" : <Guest lastName={guest.lastName} firstName={guest.firstName} rsvp={false}/>})}
-            </ul>
-        )
-    }
-    
+function GuestList({listOfGuests}) {
+    return (
+        <ul>
+            {listOfGuests.sort(compareFullName).map(guest => {
+                return <Guest lastName={guest.lastName} firstName={guest.firstName} rsvp={guest.rsvp} />})}
+            
+        </ul>
+    )
 }
 
 function compareFullName(person1, person2) {
