@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-function Guest({guest}) {
+function Guest(props) {
     return (
-        <li>{guest.lastName}</li>
-    )
+        <div className="Guest">
+            <li>
+                Guest: {props.lastName}, {props.firstName} RSVP'd: {props.rsvp}
+            </li>
+        </div>
+    );
 }
 
-export default Guest
+export default Guest;

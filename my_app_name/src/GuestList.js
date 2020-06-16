@@ -6,7 +6,7 @@ function GuestList({listOfGuests}) {
     return (
         <ul>
             {listOfGuests.sort(compareFullName).map(guest => {
-                return guest.rsvp ? <Guest guest={guest} /> : ""})}
+                return guest.rsvp ? <Guest lastName={guest.lastName} firstName={guest.firstName} rsvp={guest.rsvp} /> : ""})}
             
         </ul>
     )
