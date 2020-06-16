@@ -1,11 +1,14 @@
-form {
-  grid-column: 2;
-}
-
 .Box {
   padding: 1em;
   margin: 1em;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+}
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1em;
+  padding: 3em;
 }
 
 .grid-container-3 {
@@ -13,6 +16,10 @@ form {
   grid-template-columns: auto auto auto;
   gap: 1em;
   padding: 3em;
+}
+
+.column-2 {
+  grid-column: 2;
 }
 
 .App {
