@@ -4,7 +4,7 @@ function Guest(props) {
     return (
         <div className="Guest">
             <li>
-                Guest: {props.lastName}, {props.firstName} RSVP'd: {props.rsvp}
+                Guest: {props.lastName}, {props.firstName}
             </li>
         </div>
     );
